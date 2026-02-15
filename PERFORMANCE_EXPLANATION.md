@@ -54,7 +54,9 @@ The application demonstrates a **product management system** with the following 
 
 3. **Delete Products** - Button to remove items from the list
 
-4. **Performance Tracking** - Real-time monitoring of:
+4. **Update Products** - Button to update/edit items from the list
+
+5. **Performance Tracking** - Real-time monitoring of:
    - Initial load time
    - Update/render time for each operation
    - Bundle size (measured from network transfers)
@@ -63,6 +65,7 @@ The application demonstrates a **product management system** with the following 
 ### User Interactions Tracked
 Every user action is measured for performance:
 - **Add Product**: Measures time from button click to DOM update
+- **Update Product**: Measures time from button click to DOM update and re-render time
 - **Delete Product**: Tracks removal and re-render time
 - **Component Renders**: Counts and times each re-render
 
@@ -122,16 +125,7 @@ useEffect(() => {
 - Uses `requestAnimationFrame` inside `useEffect` to capture the post-paint timestamp, making the measurement include browser layout and paint.
 - This yields realistic update times (typically a few ms) and avoids misleading near-zero values that happen when measuring only synchronous code around `setState`.
 - **Real measurement**: 1-6ms per update (to-paint), depending on item size and browser workload
-
-**4. Memory Usage**
-```javascript
-if (performance.memory) {
-  const reactMem = (performance.memory.usedJSHeapSize / 1048576).toFixed(2);
-}
-```
-- Uses Chrome's Performance Memory API
-- Measures heap size in MB
-- **Real measurement**: Actual runtime memory footprint
+  
 
 #### Standard UI5 Performance Measurement (Simulated, Realistic)
 
