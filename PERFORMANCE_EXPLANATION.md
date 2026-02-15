@@ -58,7 +58,6 @@ The application demonstrates a **product management system** with the following 
    - Initial load time
    - Update/render time for each operation
    - Bundle size (measured from network transfers)
-   - Memory usage (from Performance API)
 
 ### User Interactions Tracked
 Every user action is measured for performance:
