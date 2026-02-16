@@ -50,7 +50,6 @@ The application demonstrates a **product management system** with the following 
 2. **Display Products** - Interactive table showing:
    - Product list with all details
    - Real-time render count
-   - Performance metrics
 
 3. **Delete Products** - Button to remove items from the list
 
